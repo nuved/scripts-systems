@@ -28,7 +28,7 @@ starttmux() {
     unset hosts[0];
     for i in "${hosts[@]}"
     do
-        tmux split-window -t :"${target}" -h "ssh $user@$i"
+        tmux split-window -t :"${target}" -h "mosh $user@$i"
         tmux select-layout -t :"${target}" tiled > /dev/null	
     done
     tmux select-pane -t 0
